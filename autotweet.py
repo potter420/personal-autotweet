@@ -13,6 +13,7 @@ creds['ACCESS_TOKEN'] = os.environ['TWITTER_ACCESS_TOKEN']
 creds['ACCESS_SECRET'] = os.environ['TWITTER_ACCESS_SECRET']
 database = os.environ['TWITTER_DB']
 logdir = os.environ['TWITTER_LOG']
+userlist = os.environ['TWITTER_USER_LIST']
 tablename = 'most_recent_tweet'
 retweetedid = 'retweeted'
 
@@ -97,7 +98,7 @@ def init_db(constr):
         conn.commit()
         
 def listen_for_tweet(q):
-    with open('/home/thanhtm1/userlist.txt', mode='r') as f:
+    with open(userlist, mode='r') as f:
         comma_separated_string = f.read()
     twitter = Twython(creds['CONSUMER_KEY'], creds['CONSUMER_SECRET'], 
                         creds['ACCESS_TOKEN'], creds['ACCESS_SECRET'])
