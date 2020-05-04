@@ -7,12 +7,12 @@ import logging
 import requests
 
 creds = {}
-creds['CONSUMER_KEY'] = '0Uk6bzl3jNlK2VvRlnhnmsBDY'
-creds['CONSUMER_SECRET'] = '9yM58A0pao8R8LnxmBPF5PlyLVxSDdSgzFtRjNYeRIMFmAtwww'
-creds['ACCESS_TOKEN'] = '3161243935-USuEbUboy0DSTi4KDOxNvMQGCaspMg7EpkptJEb'
-creds['ACCESS_SECRET'] = '4ZGJHlHoBZgnFjzgSYBey3DyczqcfBD2LCe63tB46BR6h'
-database = '/home/thanhtm1/tweet.db'
-logdir = '/home/thanhtm1/AutoTweetLog/'
+creds['CONSUMER_KEY'] = os.environ['TWITTER_CONSUMER_KEY']
+creds['CONSUMER_SECRET'] = os.environ['TWITTER_CONSUMER_SECRET']
+creds['ACCESS_TOKEN'] = os.environ['TWITTER_ACCESS_TOKEN']
+creds['ACCESS_SECRET'] = os.environ['TWITTER_ACCESS_SECRET']
+database = './tweet.db'
+logdir = './AutoTweetLog/'
 tablename = 'most_recent_tweet'
 retweetedid = 'retweeted'
 
