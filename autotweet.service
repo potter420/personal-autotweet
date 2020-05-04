@@ -1,0 +1,14 @@
+[Unit]
+Description=Auto Retweet
+After=multi-user.target
+Conflicts=getty@tty1.service
+
+[Service]
+Type=notify
+EnvironmentFile=$HOME/.twitter_credentials
+ExecStart=/usr/bin/python3 $HOME/personal-autotweet/autotweet.py
+#Restart=on-failure
+User=ubuntu
+
+[Install]
+WantedBy=multi-user.target
