@@ -11,8 +11,8 @@ creds['CONSUMER_KEY'] = os.environ['TWITTER_CONSUMER_KEY']
 creds['CONSUMER_SECRET'] = os.environ['TWITTER_CONSUMER_SECRET']
 creds['ACCESS_TOKEN'] = os.environ['TWITTER_ACCESS_TOKEN']
 creds['ACCESS_SECRET'] = os.environ['TWITTER_ACCESS_SECRET']
-database = './tweet.db'
-logdir = './AutoTweetLog/'
+database = os.environ['TWITTER_DB']
+logdir = os.environ['TWITTER_LOG']
 tablename = 'most_recent_tweet'
 retweetedid = 'retweeted'
 
