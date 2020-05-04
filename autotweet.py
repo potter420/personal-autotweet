@@ -175,6 +175,7 @@ def batch_processing(q, retq, constr):
                 logger.debug('Favouriting: %s'%rss.__repr__())
 
 if __name__ == '__main__':
+    import systemd.daemon
     init_db(database)
     logger = create_logger('main', logdir = logdir)
     logger.info('Start AutoTweet')
@@ -186,6 +187,7 @@ if __name__ == '__main__':
     ls1.start()
     ls2.start()
     ls3.start()
+    systemd.daemon.notify('READY=1')
     ls1.join()
     q.put(['None',9])
     ls2.join()
