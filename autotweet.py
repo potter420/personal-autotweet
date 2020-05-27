@@ -169,7 +169,8 @@ def batch_processing(q, retq, constr):
                          '''.format(tablename, n)).fetchall()
                 for e in rss:
                     try:
-                        twitter.create_favorite(id = e[0])
+                        #twitter.create_favorite(id = e[0])
+                        logger.debug('Skip favorting')
                     except:
                         logger.debug('Error liking Tweet: %s'%e.__repr__())
                 logger.debug('Favouriting: %s'%rss.__repr__())
